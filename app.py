@@ -1,12 +1,12 @@
-import os
-os.environ["TF_USE_LEGACY_KERAS"] = "1"  # This forces compatibility!
-
 import streamlit as st
-from transformers import AutoTokenizer, TFAutoModelForCausalLM
 import tensorflow as tf
+from transformers import AutoTokenizer, TFAutoModelForCausalLM
 
 # Configure the Streamlit page
 st.set_page_config(page_title="Friendly Bot", page_icon="🤖", layout="centered")
+
+st.title("Friendly Bot 🤖")
+st.write("A casual, general-purpose chatbot running entirely locally via TensorFlow!")
 
 # Cache the model loading
 @st.cache_resource
