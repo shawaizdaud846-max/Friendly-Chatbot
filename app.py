@@ -16,6 +16,9 @@ def load_model():
     model = TFAutoModelForCausalLM.from_pretrained(model_path)
     return tokenizer, model
 
+# ---> THE FIX: We must call the function to actually load the model! <---
+tokenizer, model = load_model()
+
 # Initialize session state to store chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
